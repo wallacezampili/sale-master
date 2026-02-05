@@ -5,7 +5,7 @@ async function getLigaYugiohData(cardUrl) {
   console.log(cardUrl);
 
   const { browser, page } = await connect({
-    headless: false,
+    headless: true,
 
     args: [],
     defaultViewport: false,
@@ -29,7 +29,7 @@ async function getLigaYugiohData(cardUrl) {
 
   await page.goto(cardUrl, { waitUntil: 'domcontentloaded' });
 
-  await new Promise(r => setTimeout(r, 7000));
+  await new Promise(r => setTimeout(r, 10000));
   
   
   const minPriceSelector = ".min>.price";
@@ -37,7 +37,6 @@ async function getLigaYugiohData(cardUrl) {
   const maxPriceSelector = ".max>.price";
   const cardNameSelector = ".item-name-en";
 
-  
   let minPrice = await page.$eval(minPriceSelector, el => el.textContent);
   let mediumPrice = await page.$eval(mediumPriceSelector, el => el.textContent);
   let maxPrice = await page.$eval(maxPriceSelector, el => el.textContent);
@@ -46,7 +45,7 @@ async function getLigaYugiohData(cardUrl) {
 
   browser.close();
 
-  return {cardName, minPrice, mediumPrice, maxPrice, cardImage};
+  return {productName, minPrice, mediumPrice, maxPrice, cardImage};
 
 }
 
