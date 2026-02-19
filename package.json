@@ -7,9 +7,30 @@
     "puppeteer-real-browser": "^1.4.4"
   },
   "devDependencies": {
-    "nodemon": "^3.1.11"
+    "@types/express": "^5.0.6",
+    "@types/mongoose": "^5.11.96",
+    "@types/node": "^25.2.2",
+    "nodemon": "^3.1.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   },
   "scripts": {
-    "start": "nodemon index.js"
-  }
+    "dev": "nodemon"
+  },
+  "name": "sale-master",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wallacezampili/sale-master.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/wallacezampili/sale-master/issues"
+  },
+  "homepage": "https://github.com/wallacezampili/sale-master#readme"
 }

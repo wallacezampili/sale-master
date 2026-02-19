@@ -5,13 +5,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 //ENV VARIABLES
-PORT = process.env.PORT
-DB_URI = process.env.DB_URI
+const PORT: string = process.env.PORT || '3000';
+const DB_URI: string = process.env.DB_URI || '';
 
 const app = express();
 
 
-app.get('/', async (req, res) => {
+app.get('/', async (req: Request, res: Response) => {
     const data = await puppet.getLigaYugiohData('https://www.ligayugioh.com.br/?view=cards/card&card=D/D/D%20Zero%20Doom%20Queen%20Machinex');
     console.log(data);
     res.json(data);

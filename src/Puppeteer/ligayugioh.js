@@ -55,4 +55,4 @@ const card2 = await getLigaYugiohData('https://www.ligayugioh.com.br/?view=cards
 
 console.log(card);
 console.log(card2);
-// module.exports = { getLigaYugiohData };
+module.exports = { getLigaYugiohData };
